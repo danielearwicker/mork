@@ -1,0 +1,4 @@
+$(this)_type = exe
+$(this)_requires = static2
+
+$(this)_postbuild = $$($(this)_main)

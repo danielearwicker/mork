@@ -1,4 +1,4 @@
 $(this)_type = exe
-$(this)_requires = b
+$(this)_requires = shared1 shared2
 
 $(this)_postbuild = $$($(this)_main)

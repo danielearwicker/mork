@@ -1,2 +1,0 @@
-$(this)_type = static
-$(this)_requires = a

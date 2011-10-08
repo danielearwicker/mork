@@ -1,6 +1,6 @@
 
 cpp_tool = g++
-cpp_flags = -c -DPOSIX -g -O0 -fno-inline -MD -MP
+cpp_flags = -c -DPOSIX -g -O0 -fno-inline -MD -MP -fPIC 
 # We generate dependencies at same time as compiling (-MD)
 cpp_generate_dependencies = 
 cpp_output = -o
@@ -14,9 +14,7 @@ static_output_dir = lib
 static_output_prefix = lib
 static_output_suffix = .lib
 
-shared_tool = @echo WIP...
-shared_flags = -cr
-shared_output = -o 
+shared_tool = gcc -shared -Wl,-soname,$(1) -o $(1)
 shared_output_dir = so
 shared_output_prefix = 
 shared_output_suffix = .so
