@@ -13,7 +13,7 @@ $(2)_normal_windows_link = $(exe_libpath_prefix)$(1)/$(config_variant)/prebuilt_
 
 $(2)_link = $$(or $$($(2)_$(config_variant)_link),$$($(2)_normal_$(config_variant)_link))
 
-$(2)_shared_path = $$($(2)_$(config_variant)_shared_path)
+$(2)_shared_path = $$($(2)_$(config_variant)_shared_path)$(env_separator)
 
 endef
 

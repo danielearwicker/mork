@@ -18,6 +18,7 @@ shared_tool = gcc -shared -Wl,-soname,$(1) -o $(1)
 shared_output_dir = so
 shared_output_prefix = 
 shared_output_suffix = .so
+shared_output_link = $(1)
 
 exe_tool = g++
 exe_flags = 

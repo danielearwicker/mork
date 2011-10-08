@@ -18,12 +18,14 @@ static_output_dir = lib
 static_output_prefix = 
 static_output_suffix = .lib
 
-shared_tool = @echo WIP...
-shared_flags = -NOLOGO
-shared_output = -OUT:
+shared_tool = link.exe -nologo -dll -OUT:$(1) -IMPLIB:$(1).lib
 shared_output_dir = dll
 shared_output_prefix = 
 shared_output_suffix = .dll
+shared_output_link = $(1).lib
+
+shared_flags = -NOLOGO
+shared_output = -OUT:
 
 exe_tool = link
 exe_flags = -NOLOGO Advapi32.lib ws2_32.lib Delayimp.lib -NODEFAULTLIB:libc.lib,libcmt.lib,libcd.lib,libcmtd.lib,msvcrtd.lib -debug
@@ -34,7 +36,6 @@ exe_libpath_prefix = -LIBPATH:
 exe_libname_prefix = 
 
 env_keyword = export
-env_separator = ;
-# A dummy var because setting the path is problematic
-env_libpath = DLL_PATH
+env_separator = :
+env_libpath = PATH
 
